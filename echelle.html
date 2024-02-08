@@ -15,12 +15,12 @@
     import {posiColor} from './modules/posiColor.js';
 
     let data, 
-        //urlData = "https://raw.githubusercontent.com/Victorianed/echelles/main/data_musee_france.csv",
-        urlData = "https://github.com/Boubritjuba/echelles/blob/4ecadfbbab45041581faab6479fc7fc691ecc1fc/Tableau%20de%20donn%C3%A9es",
+        //urlData = "http://localhost/samszo/HDR/docs/assets/data/complexityFrequency.json",
+        urlData = "https://github.com/Boubritjuba/echelles/blob/4ecadfbbab45041581faab6479fc7fc691ecc1fc/Tableau%20de%20donn%C3%A9es
+",
         width = 600, height=100, widthLibTxt=100, svg,
         //pVal='cpx',pLib='dim',pFreq='nbCpx',
-        //pVal='identifiant_museofile',pLib='region_administrative',pFreq='geolocalisation',
-        pVal='identifiant_museofile',pLib='region_administrative',pFreq='geolocalisation',
+        pVal='Année',pLib='Mois',pFreq='Nombre de mesures mensuelles',
         
         interpolates = false;
         /*{
@@ -41,11 +41,7 @@
 
     function setData(rs){
         data = Array.from(d3.group(rs, d => d[pLib])).map(d=>{
-                    let groupDep = d3.group(d[1], d => d['departement']),
-                    nbMusee = d[1].lenght,
-                    nbDep = groupDep.lenght,
-                    moyMuseDep = nbMusee/nbDep,
-                    extX = d3.extent(d[1], d=>d[pVal]),
+                    let extX = d3.extent(d[1], d=>d[pVal]),
                         extY = d3.extent(d[1], d=>d[pFreq]),
                         o = {'vals':d[1],
                         'extX':[1,extX[1]],
