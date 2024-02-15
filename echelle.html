@@ -26,10 +26,10 @@
     import {posiColor} from './modules/posiColor.js';
 
     let data, 
-        //urlData = "Tableau_data_juba.csv",
-        urlData = "data/fr-en-evaluations_nationales_6eme_region.csv",
+        //urlData = "http://localhost/samszo/HDR/docs/assets/data/complexityFrequency.json",
+        urlData = "Tableau_data_juba.csv",
         width = 600, height=600, widthLibTxt=120, svg,  
-        valX='mois',valGroupe='Matière',valY='Annee', valLibCercle = 'Nombre de mesures mensuelle',
+        valX='Mois',valGroupe='Annee',valY='Ecart type', valLibCercle = 'Nombre de mesures mensuelles',
         bandY,
         interpolates = false,
         toolTip = d3.select("#toolTip");
